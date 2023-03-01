@@ -13,6 +13,10 @@
 		E42D565929A171AE00D55F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42D565829A171AE00D55F93 /* Preview Assets.xcassets */; };
 		E42D565B29A171AE00D55F93 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D565A29A171AE00D55F93 /* Persistence.swift */; };
 		E42D565E29A171AE00D55F93 /* Little_Lemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E42D565C29A171AE00D55F93 /* Little_Lemon.xcdatamodeld */; };
+		E48EECE229AD26A0007EC011 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECE129AD26A0007EC011 /* Onboarding.swift */; };
+		E48EECE829AD3D05007EC011 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECE729AD3D05007EC011 /* Home.swift */; };
+		E48EECEC29AD43AB007EC011 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECEB29AD43AB007EC011 /* Menu.swift */; };
+		E48EECEE29AE832F007EC011 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECED29AE832F007EC011 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		E42D565829A171AE00D55F93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E42D565A29A171AE00D55F93 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E42D565D29A171AE00D55F93 /* Little_Lemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Little_Lemon.xcdatamodel; sourceTree = "<group>"; };
+		E48EECE129AD26A0007EC011 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		E48EECE729AD3D05007EC011 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		E48EECEB29AD43AB007EC011 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		E48EECED29AE832F007EC011 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				E42D565129A171AD00D55F93 /* Little_LemonApp.swift */,
-				E42D565329A171AD00D55F93 /* ContentView.swift */,
+				E48EECE129AD26A0007EC011 /* Onboarding.swift */,
+				E48EECED29AE832F007EC011 /* UserProfile.swift */,
+				E48EECE729AD3D05007EC011 /* Home.swift */,
+				E48EECEB29AD43AB007EC011 /* Menu.swift */,
+				E48EECE029AD252F007EC011 /* Core Data */,
 				E42D565529A171AE00D55F93 /* Assets.xcassets */,
-				E42D565A29A171AE00D55F93 /* Persistence.swift */,
-				E42D565C29A171AE00D55F93 /* Little_Lemon.xcdatamodeld */,
 				E42D565729A171AE00D55F93 /* Preview Content */,
 			);
 			path = "Little Lemon";
@@ -71,6 +81,16 @@
 				E42D565829A171AE00D55F93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E48EECE029AD252F007EC011 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E42D565A29A171AE00D55F93 /* Persistence.swift */,
+				E42D565329A171AD00D55F93 /* ContentView.swift */,
+				E42D565C29A171AE00D55F93 /* Little_Lemon.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +165,11 @@
 			files = (
 				E42D565B29A171AE00D55F93 /* Persistence.swift in Sources */,
 				E42D565E29A171AE00D55F93 /* Little_Lemon.xcdatamodeld in Sources */,
+				E48EECEC29AD43AB007EC011 /* Menu.swift in Sources */,
+				E48EECE229AD26A0007EC011 /* Onboarding.swift in Sources */,
+				E48EECEE29AE832F007EC011 /* UserProfile.swift in Sources */,
 				E42D565429A171AD00D55F93 /* ContentView.swift in Sources */,
+				E48EECE829AD3D05007EC011 /* Home.swift in Sources */,
 				E42D565229A171AD00D55F93 /* Little_LemonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
