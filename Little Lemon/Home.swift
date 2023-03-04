@@ -12,8 +12,18 @@ struct Home: View {
  
 
     var body: some View {
-//        NavigationView{
-                VStack{
+
+        VStack(spacing:0){
+                    HStack {
+                                            Spacer()
+                                            Image("Logo")
+                                                .resizable()
+                                                .scaledToFit()
+                                            Spacer()
+                                        }.frame(height: 40)
+                                    .background(Color.white)
+                                    .opacity(0.9)
+                                    .padding(.bottom)
                 
                     TabView{
                         Menu()
@@ -34,16 +44,14 @@ struct Home: View {
 
             
 
-//        }
+
         .navigationBarBackButtonHidden(true)
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
-//            .environment(\.managedObjectContext, persistence.container.viewContext)
-    
+        Home()    
     }
 }
 

@@ -10,15 +10,17 @@ import SwiftUI
 struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    let heroView = HeroView()
+    
     @State var menuItems: [MenuItem] = []
     
+    @State var searchText: String = ""
+    
     var body: some View {
-            VStack{
-                Text("Little Lemon")
-                Text("Chicago")
-                Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. ")
-                  
-            FetchedObjects() { (dishes: [Dish]) in
+        VStack(spacing:0){
+             heroView
+                    .withSearchBar(searchText: $searchText)
+                FetchedObjects( predicate: buildPredicate(), sortDescriptors:buildSortDescriptors()) { (dishes: [Dish]) in
                 List{
                     ForEach(dishes) { dish in
                         HStack{
@@ -34,26 +36,19 @@ struct Menu: View {
                         }
                     }
                     
-                }
+                }// now outside list
                  
-            }
+            }// now outside fetched objects
                 
-//                            ForEach(menuItems.menu) { menuItem in
-//                                let dish = Dish(context: viewContext)
-//                                dish.title = menuItem.title
-//                                dish.price = menuItem.price
-//
-//                                try? viewContext.save()
-//
                 
-            }
+            } //Now outside Vstack
             .onAppear(){
                 getMenuData()
                 print("data fetched")
             }
              
         
-    }
+    }// now outside body view, under are view methods
     
     
     func getMenuData(){
@@ -100,8 +95,41 @@ struct Menu: View {
         
         
         
+    }//now outside getMenuData
+    
+    func buildSortDescriptors() -> [NSSortDescriptor]{
+        return [
+            NSSortDescriptor(key: "title", ascending: true, selector:  #selector(NSString.localizedStandardCompare) )
+        ]
+    }
+    
+    func buildPredicate() -> NSPredicate{
+        return searchText.isEmpty ?  NSPredicate(value: true) :       NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+    }
+    
+}// end of Menu view
+
+extension HeroView {
+    func withSearchBar(searchText: Binding<String>) -> some View {
+        VStack(spacing: 0) {
+            self
+                
+            HStack {
+                TextField("\(Image(systemName: "magnifyingglass")) Search menu", text: searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            .padding([.leading, .bottom, .trailing])
+        }
+        
+        .background(Color("Primary green"))
+        
     }
 }
+
+
+
+
+
 struct Menu_Previews: PreviewProvider {
     static var previews: some View {
         Menu()

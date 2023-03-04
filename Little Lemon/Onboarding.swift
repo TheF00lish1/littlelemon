@@ -12,7 +12,7 @@ struct Onboarding: View {
     
     
   
-    
+    @State var heroView = HeroView()
 
     @State var isLoggedIn = false
     @State  var firstName = ""
@@ -30,10 +30,22 @@ struct Onboarding: View {
 
     var body: some View {
         NavigationView(){
-            VStack{
+            
+            VStack(spacing: 0){
+                HStack {
+                                        Spacer()
+                                        Image("Logo")
+                                            .resizable()
+                                            .scaledToFit()
+                                        Spacer()
+                }.frame(height: 40.0)
+                                .background(Color.white)
+                                .opacity(0.9)
+                                .padding(.bottom)
+                //
                 NavigationLink( destination: Home(), isActive: $isLoggedIn){EmptyView()
                 }
-                
+                heroView
                 Form{
                     Section("First Name"){
                         TextField("First Name", text: $firstName)
@@ -50,21 +62,24 @@ struct Onboarding: View {
 //                        showAlert = !showAlert
 //                        print(showAlert)
                         //Add an alert
-                        
+
                     }
                     .padding(.horizontal, 125.0)
-                  
-                    
+
+
                 }
-             
-                        
-               
+
+
+
             }
+            
            
             .onAppear(){
                 loginCheck()
             }
+           
         }
+        
     }
     
     func formValidation() {
