@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E42D565229A171AD00D55F93 /* Little_LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D565129A171AD00D55F93 /* Little_LemonApp.swift */; };
-		E42D565429A171AD00D55F93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D565329A171AD00D55F93 /* ContentView.swift */; };
 		E42D565629A171AE00D55F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42D565529A171AE00D55F93 /* Assets.xcassets */; };
 		E42D565929A171AE00D55F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42D565829A171AE00D55F93 /* Preview Assets.xcassets */; };
-		E42D565B29A171AE00D55F93 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D565A29A171AE00D55F93 /* Persistence.swift */; };
-		E42D565E29A171AE00D55F93 /* Little_Lemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E42D565C29A171AE00D55F93 /* Little_Lemon.xcdatamodeld */; };
+		E44E0AE929AFD37C00ED4CB2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E0AE829AFD37C00ED4CB2 /* Persistence.swift */; };
+		E44E0AEB29AFD38300ED4CB2 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E0AEA29AFD38300ED4CB2 /* FetchedObjects.swift */; };
+		E44E0AEF29AFF16100ED4CB2 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E0AEE29AFF16100ED4CB2 /* MenuItem.swift */; };
+		E44E0AF129AFF16C00ED4CB2 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E0AF029AFF16C00ED4CB2 /* MenuList.swift */; };
+		E44E0AF629B00CC100ED4CB2 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E44E0AF429B00CC100ED4CB2 /* ExampleDatabase.xcdatamodeld */; };
 		E48EECE229AD26A0007EC011 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECE129AD26A0007EC011 /* Onboarding.swift */; };
 		E48EECE829AD3D05007EC011 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECE729AD3D05007EC011 /* Home.swift */; };
 		E48EECEC29AD43AB007EC011 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EECEB29AD43AB007EC011 /* Menu.swift */; };
@@ -22,11 +24,13 @@
 /* Begin PBXFileReference section */
 		E42D564E29A171AD00D55F93 /* Little Lemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Lemon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42D565129A171AD00D55F93 /* Little_LemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_LemonApp.swift; sourceTree = "<group>"; };
-		E42D565329A171AD00D55F93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E42D565529A171AE00D55F93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E42D565829A171AE00D55F93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E42D565A29A171AE00D55F93 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		E42D565D29A171AE00D55F93 /* Little_Lemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Little_Lemon.xcdatamodel; sourceTree = "<group>"; };
+		E44E0AE829AFD37C00ED4CB2 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Persistence.swift; path = ../../../../Downloads/KrOCQU2CTpmu1REIfryAvg_ae0cd909bf5e4e7db7525f835ddd50e1_CoreDataSupport/Persistence.swift; sourceTree = "<group>"; };
+		E44E0AEA29AFD38300ED4CB2 /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		E44E0AEE29AFF16100ED4CB2 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		E44E0AF029AFF16C00ED4CB2 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		E44E0AF529B00CC100ED4CB2 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 		E48EECE129AD26A0007EC011 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		E48EECE729AD3D05007EC011 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E48EECEB29AD43AB007EC011 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -86,9 +90,11 @@
 		E48EECE029AD252F007EC011 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				E42D565A29A171AE00D55F93 /* Persistence.swift */,
-				E42D565329A171AD00D55F93 /* ContentView.swift */,
-				E42D565C29A171AE00D55F93 /* Little_Lemon.xcdatamodeld */,
+				E44E0AF429B00CC100ED4CB2 /* ExampleDatabase.xcdatamodeld */,
+				E44E0AF029AFF16C00ED4CB2 /* MenuList.swift */,
+				E44E0AEE29AFF16100ED4CB2 /* MenuItem.swift */,
+				E44E0AEA29AFD38300ED4CB2 /* FetchedObjects.swift */,
+				E44E0AE829AFD37C00ED4CB2 /* Persistence.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -163,13 +169,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42D565B29A171AE00D55F93 /* Persistence.swift in Sources */,
-				E42D565E29A171AE00D55F93 /* Little_Lemon.xcdatamodeld in Sources */,
+				E44E0AE929AFD37C00ED4CB2 /* Persistence.swift in Sources */,
 				E48EECEC29AD43AB007EC011 /* Menu.swift in Sources */,
 				E48EECE229AD26A0007EC011 /* Onboarding.swift in Sources */,
 				E48EECEE29AE832F007EC011 /* UserProfile.swift in Sources */,
-				E42D565429A171AD00D55F93 /* ContentView.swift in Sources */,
 				E48EECE829AD3D05007EC011 /* Home.swift in Sources */,
+				E44E0AF629B00CC100ED4CB2 /* ExampleDatabase.xcdatamodeld in Sources */,
+				E44E0AEF29AFF16100ED4CB2 /* MenuItem.swift in Sources */,
+				E44E0AEB29AFD38300ED4CB2 /* FetchedObjects.swift in Sources */,
+				E44E0AF129AFF16C00ED4CB2 /* MenuList.swift in Sources */,
 				E42D565229A171AD00D55F93 /* Little_LemonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,13 +379,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E42D565C29A171AE00D55F93 /* Little_Lemon.xcdatamodeld */ = {
+		E44E0AF429B00CC100ED4CB2 /* ExampleDatabase.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E42D565D29A171AE00D55F93 /* Little_Lemon.xcdatamodel */,
+				E44E0AF529B00CC100ED4CB2 /* ExampleDatabase.xcdatamodel */,
 			);
-			currentVersion = E42D565D29A171AE00D55F93 /* Little_Lemon.xcdatamodel */;
-			path = Little_Lemon.xcdatamodeld;
+			currentVersion = E44E0AF529B00CC100ED4CB2 /* ExampleDatabase.xcdatamodel */;
+			path = ExampleDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

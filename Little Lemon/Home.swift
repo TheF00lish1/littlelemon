@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    
+    let persistence = PersistenceController.shared
  
 
     var body: some View {
@@ -17,11 +17,15 @@ struct Home: View {
                 
                     TabView{
                         Menu()
+                          .environment(\.managedObjectContext, persistence.container.viewContext)
                             .tabItem({Label( "Menu", systemImage: "list.dash")})
+//
                         UserProfile()
                             .tabItem({Label( "Profile", systemImage: "square.and.pencil")})
 
                     }
+                    
+                    
 
             .navigationBarHidden(true)
             .navigationTitle("Home Screen")
@@ -38,11 +42,54 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+//            .environment(\.managedObjectContext, persistence.container.viewContext)
+    
     }
 }
 
+//
+//    struct ContentView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//        }
+//    }
+//
 
-
+// MARK: - import CoreData
+    
+//    struct ContentView: View {
+//        @Environment(\.managedObjectContext) private var viewContext
+//
+//        @FetchRequest(
+//            sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+//            animation: .default)
+//        private var items: FetchedResults<Item>
+//
+//        var body: some View {
+//            NavigationView {
+//                List {
+//                    ForEach(items) { item in
+//                        NavigationLink {
+//                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+//                        } label: {
+//                            Text(item.timestamp!, formatter: itemFormatter)
+//                        }
+//                    }
+//                    .onDelete(perform: deleteItems)
+//                }
+//                .toolbar {
+//                    ToolbarItem(placement: .navigationBarTrailing) {
+//                        EditButton()
+//                    }
+//                    ToolbarItem {
+//                        Button(action: addItem) {
+//                            Label("Add Item", systemImage: "plus")
+//                        }
+//                    }
+//                }
+//                Text("Select an item")
+//            }
+//        }
 
 
 

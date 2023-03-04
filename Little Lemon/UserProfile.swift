@@ -49,6 +49,7 @@ struct UserProfile: View {
                     }
                     Button("Logout"){
                         UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                        print(UserDefaults.standard.bool(forKey: "kIsLoggedIn"))
                         presentation.wrappedValue.dismiss()
                         
                         

@@ -30,7 +30,6 @@ struct Onboarding: View {
 
     var body: some View {
         NavigationView(){
-            Spacer()
             VStack{
                 NavigationLink( destination: Home(), isActive: $isLoggedIn){EmptyView()
                 }
@@ -48,8 +47,8 @@ struct Onboarding: View {
 
                     Button("Register"){
                         formValidation()
-                        showAlert = !showAlert
-                        print(showAlert)
+//                        showAlert = !showAlert
+//                        print(showAlert)
                         //Add an alert
                         
                     }
