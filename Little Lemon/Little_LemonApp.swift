@@ -12,7 +12,8 @@ struct Little_LemonApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Onboarding()      
+            Onboarding()
+               
         }
     }
 }

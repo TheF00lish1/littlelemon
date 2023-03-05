@@ -18,6 +18,7 @@ struct Onboarding: View {
     @State  var firstName = ""
     @State  var lastName = ""
     @State  var email = ""
+    @State var phoneNumber = ""
     
     @State private var alertText = "alert sample"
     @State private var showAlert = false
@@ -27,6 +28,7 @@ struct Onboarding: View {
     let kLastName = "kLastName"
     let kEmail = "kEmail"
     let kIsLoggedIn = "kIsLoggedIn"
+    let kPhoneNumber = "kPhonNumber"
 
     var body: some View {
         NavigationView(){
@@ -38,23 +40,23 @@ struct Onboarding: View {
                                             .resizable()
                                             .scaledToFit()
                                         Spacer()
-                }.frame(height: 40.0)
+                }
+                .frame(height: 40.0)
                                 .background(Color.white)
                                 .opacity(0.9)
                                 .padding(.bottom)
-                //
                 NavigationLink( destination: Home(), isActive: $isLoggedIn){EmptyView()
                 }
                 heroView
                 Form{
-                    Section("First Name"){
+                    Section("First Name *"){
                         TextField("First Name", text: $firstName)
                     }
-                    Section("Last Name "){
+                    Section("Last Name *"){
                         TextField("Last Name", text: $lastName)
                     }
-                    Section("email"){
-                        TextField("email ", text: $email)
+                    Section("email *"){
+                        TextField("Email ", text: $email)
                     }
 
                     Button("Register"){
@@ -65,13 +67,15 @@ struct Onboarding: View {
 
                     }
                     .padding(.horizontal, 125.0)
-
-
                 }
+              
+                
+               
 
 
 
             }
+            
             
            
             .onAppear(){
@@ -79,8 +83,9 @@ struct Onboarding: View {
             }
            
         }
-        
     }
+    
+    
     
     func formValidation() {
         if firstName.isEmpty || lastName.isEmpty || email.isEmpty {
@@ -95,6 +100,7 @@ struct Onboarding: View {
             UserDefaults.standard.set(firstName, forKey: "kFirstName")
                    UserDefaults.standard.set(lastName, forKey: "kLastName")
                    UserDefaults.standard.set(email, forKey: "kEmail")
+            UserDefaults.standard.set(phoneNumber, forKey: "kPhoneNumber")
             UserDefaults.standard.set(isLoggedIn, forKey: "kIsLoggedIn")
                    print("Data stored successfully in UserDefaults")
         }
@@ -123,3 +129,10 @@ struct Onboarding_Previews: PreviewProvider {
     }
 }
 
+
+
+
+
+/// Screen 2 : Email and phone number
+/// Screen 3 : Profile creation summary -> Confirm button
+/// 

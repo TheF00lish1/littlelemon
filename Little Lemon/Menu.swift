@@ -15,16 +15,80 @@ struct Menu: View {
     @State var menuItems: [MenuItem] = []
     
     @State var searchText: String = ""
+    @State var categorySelected : String = ""
     
     var body: some View {
         VStack(spacing:0){
              heroView
                     .withSearchBar(searchText: $searchText)
                 FetchedObjects( predicate: buildPredicate(), sortDescriptors:buildSortDescriptors()) { (dishes: [Dish]) in
-                List{
+                        
+                            
+                    List{
+                        VStack(alignment: .leading, spacing: 0){
+                            Text("Order for delivery!")
+                                .font(.title3)
+                                .fontWeight(.heavy)
+                                .padding(.top)
+                                
+                            HStack(spacing: 30){
+                                
+                                ZStack(){
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(Color("Highlight off white"))
+                                    
+                                    Text(" Starters ")
+                                    .modifier(categoryStyling())}
+                                .onTapGesture { print("Staters pressed")}
+
+                                ZStack(){
+                                    
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(Color("Highlight off white"))
+                                    
+                                    Text("  Mains  ")
+                                    .modifier(categoryStyling())}
+                                .onTapGesture { print("Mains pressed")}
+
+
+                                ZStack(){
+                                    
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(Color("Highlight off white"))
+                                    
+                                    Text("  Desserts  ")
+                                    .modifier(categoryStyling())}
+                                .onTapGesture { print("Desserts pressed")}
+
+
+                                ZStack(){
+                                
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(Color("Highlight off white"))
+                                    
+                                    Text("  Drinks  ")
+                                    .modifier(categoryStyling())}
+                                .onTapGesture {print("Drinks pressed")}
+                                
+                            }
+                            .padding(.vertical)
+                        }
+                        
+                        
+                        
                     ForEach(dishes) { dish in
-                        HStack{
-                            Text("\(dish.title!) - \(dish.price!)")
+                        HStack(){
+                            VStack(alignment: .leading, spacing: 30){
+                                Text("\(dish.title!)")
+                                    .font(.body)
+                                    .bold()
+                                Text("Item description to be implemented in the future...")
+                                    .foregroundColor(Color("Primary green"))
+                                     Text("$ \(dish.price!)")
+                                    .bold()
+                                    .foregroundColor(Color("Primary green"))
+                            }
+                          Spacer()
                             AsyncImage(url: URL(string: dish.image!)) { image in
                                 image
                                     .resizable()
@@ -32,11 +96,13 @@ struct Menu: View {
                             } placeholder: {
                                 ProgressView()
                             }
-                            .frame(width: 50, height: 50)
+                            .frame(width: 100, height: 120)
                         }
                     }
                     
-                }// now outside list
+                }
+                    .listStyle(.plain)
+                    .background(Color.clear)// now outside list
                  
             }// now outside fetched objects
                 
@@ -82,6 +148,7 @@ struct Menu: View {
                         dish.title = item.title
                         dish.image = item.image
                         dish.price = item.price
+                     
                         
                         try? viewContext.save()
                     }
@@ -104,8 +171,10 @@ struct Menu: View {
     }
     
     func buildPredicate() -> NSPredicate{
-        return searchText.isEmpty ?  NSPredicate(value: true) :       NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-    }
+         return searchText.isEmpty ?  NSPredicate(value: true) :       NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+     }
+    
+   
     
 }// end of Menu view
 
@@ -123,6 +192,17 @@ extension HeroView {
         
         .background(Color("Primary green"))
         
+    }
+  
+}
+struct categoryStyling: ViewModifier {
+func body(content: Content) ->some View {
+    content
+        .font(.caption)
+        .bold()
+        .foregroundColor(Color("Primary green"))
+        
+        .background(Color("Highlight off white"))
     }
 }
 

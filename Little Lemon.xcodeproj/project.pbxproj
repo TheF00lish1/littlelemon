@@ -71,12 +71,12 @@
 			children = (
 				E42D565129A171AD00D55F93 /* Little_LemonApp.swift */,
 				E48EECE129AD26A0007EC011 /* Onboarding.swift */,
-				E48EECED29AE832F007EC011 /* UserProfile.swift */,
-				E4C5F59129B3C1A30082594A /* HeroView.swift */,
 				E48EECE729AD3D05007EC011 /* Home.swift */,
 				E48EECEB29AD43AB007EC011 /* Menu.swift */,
+				E48EECED29AE832F007EC011 /* UserProfile.swift */,
 				E48EECE029AD252F007EC011 /* Core Data */,
 				E42D565529A171AE00D55F93 /* Assets.xcassets */,
+				E4C5F59129B3C1A30082594A /* HeroView.swift */,
 				E42D565729A171AE00D55F93 /* Preview Content */,
 			);
 			path = "Little Lemon";
